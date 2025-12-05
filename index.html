@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>البروتوكول الشامل | وكالة الاستخبارات CAI</title>
+    <title>الوثيقة الدستورية | شرطة ولاية سان أندرياس</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,15 @@
 
     <style>
         :root {
-            --bg-dark: #0a0a0a;
-            --agency-red: #c0392b; 
-            --agency-dark-red: #801f15;
-            --text-white: #e0e0e0;
-            --text-legal: #a8a8a8;
+            --bg-dark: #0f1219;
+            --bg-panel: #1a2230;
+            --gold-primary: #d4af37;
+            --gold-dim: #8f7624;
+            --text-white: #f5f5f5;
+            --text-legal: #c0c8d1;
+            --border-light: rgba(212, 175, 55, 0.15);
+            --glass-effect: rgba(26, 34, 48, 0.95);
+            --alert-red: #c0392b; /* لون التحذير للخطر */
         }
 
         * {
@@ -26,19 +30,19 @@
             margin: 0;
             padding: 0;
             outline: none;
-            selection-background-color: var(--agency-red);
-            selection-color: #fff;
+            selection-background-color: var(--gold-primary);
+            selection-color: var(--bg-dark);
         }
 
         body {
             background-color: var(--bg-dark);
             background-image: 
-                radial-gradient(circle at 50% 50%, rgba(192, 57, 43, 0.05) 0%, transparent 60%),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30h1v1h-1z' fill='%23333' fill-opacity='0.2'/%3E%3C/svg%3E");
+                linear-gradient(rgba(15, 18, 25, 0.95), rgba(15, 18, 25, 0.98)),
+                url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%23d4af37' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
             color: var(--text-white);
             font-family: 'Cairo', sans-serif;
             overflow-x: hidden;
-            line-height: 1.8;
+            line-height: 2;
         }
 
         #secure-boot {
@@ -53,18 +57,16 @@
             font-family: 'Courier New', monospace;
         }
         .boot-text {
-            color: var(--agency-red);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: bold;
-            text-shadow: 0 0 10px var(--agency-red);
+            letter-spacing: 2px;
         }
         .progress-line {
-            width: 400px;
-            height: 2px;
-            background: #222;
+            width: 300px;
+            height: 1px;
+            background: #333;
             position: relative;
             overflow: hidden;
         }
@@ -74,9 +76,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: var(--agency-red);
-            animation: scan 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            box-shadow: 0 0 15px var(--agency-red);
+            background: var(--gold-primary);
+            animation: scan 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
         header {
@@ -87,9 +88,9 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(10, 10, 10, 0.95);
-            border-bottom: 2px solid var(--agency-dark-red);
-            backdrop-filter: blur(15px);
+            background: rgba(15, 18, 25, 0.95);
+            border-bottom: 1px solid var(--border-light);
+            backdrop-filter: blur(10px);
         }
         
         .department-logo {
@@ -99,39 +100,37 @@
         }
         .department-logo i {
             font-size: 2.2rem;
-            color: var(--agency-red);
-            filter: drop-shadow(0 0 5px rgba(192, 57, 43, 0.5));
+            background: linear-gradient(45deg, var(--gold-primary), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .dept-info h1 {
             font-family: 'Tajawal', sans-serif;
             font-size: 1.1rem;
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             color: #fff;
             text-transform: uppercase;
         }
         .dept-info span {
             font-size: 0.75rem;
-            color: var(--agency-red);
-            letter-spacing: 2px;
+            color: var(--gold-primary);
+            letter-spacing: 1px;
             display: block;
-            font-weight: bold;
         }
 
         .clearance-badge {
-            border: 1px solid var(--agency-red);
-            padding: 8px 25px;
-            font-size: 0.7rem;
-            color: var(--agency-red);
+            border: 1px solid var(--gold-dim);
+            padding: 8px 20px;
+            font-size: 0.75rem;
+            color: var(--gold-primary);
             letter-spacing: 1px;
             text-transform: uppercase;
-            background: rgba(192, 57, 43, 0.1);
-            box-shadow: 0 0 10px rgba(192, 57, 43, 0.1);
-            font-weight: 700;
+            background: rgba(212, 175, 55, 0.05);
         }
 
         .hero {
-            min-height: 85vh;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -145,53 +144,50 @@
             position: absolute;
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 35vw;
-            color: rgba(192, 57, 43, 0.03);
+            font-size: 30vw;
+            color: rgba(255, 255, 255, 0.02);
             z-index: -1;
             pointer-events: none;
         }
 
         .hero-title {
             font-family: 'Tajawal', sans-serif;
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 15px;
-            background: linear-gradient(180deg, #fff 40%, #777 100%);
+            background: linear-gradient(180deg, #ffffff 20%, #888 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
         }
         
         .hero-subtitle {
-            color: var(--agency-red);
-            font-size: 1.3rem;
-            letter-spacing: 8px;
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            letter-spacing: 5px;
             margin-bottom: 40px;
             text-transform: uppercase;
             font-family: 'Tajawal', sans-serif;
-            text-shadow: 0 0 20px rgba(192, 57, 43, 0.4);
         }
 
         .decree-box {
-            background: linear-gradient(90deg, rgba(20,20,20,0.9) 0%, rgba(30,30,30,0.9) 100%);
-            border-left: 5px solid var(--agency-red);
-            padding: 40px;
-            max-width: 850px;
+            background: var(--glass-effect);
+            border-right: 4px solid var(--gold-primary);
+            padding: 30px;
+            max-width: 800px;
             text-align: justify;
             margin-bottom: 50px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
             position: relative;
         }
         
         .decree-text {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-legal);
-            line-height: 2;
+            line-height: 1.8;
         }
         .decree-text strong {
             color: #fff;
             font-weight: 700;
-            border-bottom: 1px dashed var(--agency-red);
         }
 
         .constitution-container {
@@ -204,118 +200,92 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-bottom: 50px;
-            margin-top: 50px;
+            margin-bottom: 40px;
         }
         .chapter-line {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--agency-red), transparent);
+            height: 1px;
+            background: var(--border-light);
             flex-grow: 1;
         }
         .chapter-text {
-            color: #fff;
+            color: var(--gold-primary);
             font-family: 'Tajawal', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(255,255,255,0.2);
-            white-space: nowrap;
         }
 
         .article-card {
-            background: #111;
-            border: 1px solid #222;
-            margin-bottom: 35px;
+            background: linear-gradient(145deg, #1a2230 0%, #151b26 100%);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            margin-bottom: 30px;
             padding: 0;
-            transition: all 0.4s ease;
+            transition: transform 0.3s;
             position: relative;
-            overflow: hidden;
-        }
-        .article-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 3px; height: 100%;
-            background: var(--agency-red);
-            transition: width 0.3s;
-        }
-        .article-card:hover::before {
-            width: 8px;
         }
         .article-card:hover {
-            transform: translateX(-5px);
-            box-shadow: -10px 0 30px rgba(192, 57, 43, 0.1);
-            border-color: var(--agency-dark-red);
+            transform: translateY(-5px);
+            border-color: var(--border-light);
         }
 
         .article-header {
-            background: #181818;
-            padding: 20px 30px;
-            border-bottom: 1px solid #222;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .article-number {
             font-family: 'Tajawal', sans-serif;
-            color: var(--agency-red);
-            font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            color: var(--gold-primary);
+            font-weight: 700;
+            font-size: 1.1rem;
         }
         
         .article-body {
-            padding: 35px;
+            padding: 30px;
         }
         .article-body h3 {
             font-family: 'Tajawal', sans-serif;
             color: #fff;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
         }
         .article-content {
-            color: #ccc;
+            color: var(--text-legal);
             text-align: justify;
-            font-size: 1.1rem;
-            padding-left: 20px;
-            border-left: 1px solid #333;
+            font-size: 1.05rem;
+            border-right: 2px solid var(--gold-dim);
+            padding-right: 15px;
         }
 
-        .stamp {
-            position: fixed;
-            bottom: 50px; left: 50px;
-            border: 5px solid var(--agency-red);
-            color: var(--agency-red);
-            font-size: 3rem;
-            font-weight: 900;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            opacity: 0.2;
-            transform: rotate(-30deg);
-            pointer-events: none;
-            z-index: 0;
-            font-family: 'Courier New', sans-serif;
+        /* تنسيق خاص للمواد المتعلقة بالتهديدات */
+        .threat-level {
+            border-color: rgba(192, 57, 43, 0.3);
+        }
+        .threat-level .article-header {
+            background: rgba(192, 57, 43, 0.1);
+        }
+        .threat-level .article-number {
+            color: #e74c3c;
         }
 
         footer {
             text-align: center;
             padding: 60px 20px;
-            border-top: 1px solid #222;
-            margin-top: 80px;
-            background: #050505;
+            border-top: 1px solid var(--border-light);
+            margin-top: 50px;
+            background: #0a0c11;
         }
         .doj-ref {
             font-family: 'Tajawal', sans-serif;
             font-size: 1.3rem;
             color: #fff;
             margin-bottom: 10px;
-            letter-spacing: 2px;
         }
         .copy-right {
-            color: #444;
-            font-size: 0.8rem;
-            text-transform: uppercase;
+            color: #666;
+            font-size: 0.9rem;
         }
 
         @keyframes scan {
@@ -325,67 +295,66 @@
 
         @media (max-width: 768px) {
             .hero-title { font-size: 2.5rem; }
-            header { padding: 15px; flex-direction: column; gap: 15px;}
+            header { padding: 20px; flex-direction: column; gap: 10px; }
             .article-body { padding: 20px; }
-            .chapter-text { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
     <div id="secure-boot">
-        <div class="boot-text">CAI MAINFRAME // ACCESS GRANTED</div>
+        <div class="boot-text">SASP SECURE NETWORK</div>
         <div class="progress-line"></div>
-        <div style="margin-top: 15px; font-size: 12px; color: #666;">LOADING FEDERAL PROTOCOLS...</div>
+        <div style="margin-top: 10px; font-size: 12px; color: #555;">Loading Defense Protocols...</div>
     </div>
 
-    <i class="fas fa-globe-americas watermark"></i>
-    <div class="stamp">TOP SECRET</div>
+    <i class="fas fa-balance-scale watermark"></i>
 
     <header>
         <div class="department-logo">
-            <i class="fas fa-user-secret"></i>
+            <i class="fas fa-shield-alt"></i>
             <div class="dept-info">
-                <h1>وكالة الاستخبارات المركزية</h1>
-                <span>Central Agency of Intelligence</span>
+                <h1>شرطة ولاية سان أندرياس</h1>
+                <span>San Andreas State Police</span>
             </div>
         </div>
         <div class="clearance-badge">
-            اللائحة التنفيذية العليا - نسخة مصدقة
+            وثيقة رسمية - وزارة العدل
         </div>
     </header>
 
     <section class="hero">
         <div data-aos="fade-down" data-aos-duration="1200">
-            <div class="hero-subtitle">استمرارية الدولة وحماية المصالح</div>
-            <h2 class="hero-title">الدستور التشغيلي الموحد</h2>
+            <div class="hero-subtitle">المرسوم التأسيسي</div>
+            <h2 class="hero-title">الدستور التنظيمي الموحد</h2>
         </div>
 
         <div class="decree-box" data-aos="fade-up" data-aos-delay="200">
             <p class="decree-text">
-                وفقاً لبروتوكولات <strong>"الأمن القومي الشامل"</strong>، تعمل وكالة الاستخبارات المركزية (CAI) كجهاز فيدرالي سيادي مسؤول عن حماية مصالح الدولة في الداخل والخارج. تتمتع الوكالة بصلاحيات استثنائية تتجاوز الحدود التقليدية لإنفاذ القانون، وتخضع لرقابة داخلية صارمة لضمان الالتزام بمعايير المهنية، مع الاحتفاظ بحقها في اتخاذ تدابير سرية وحاسمة لحماية النظام العام.
+                إشارةً إلى الصلاحيات السيادية الممنوحة من <strong>وزارة العدل</strong>، وحرصاً على توحيد الجهود الأمنية. وفي ظل التحديات الراهنة التي تشهدها الولاية ووجود <strong>قوى معادية (Hostile Forces)</strong> تسعى لتقويض الاستقرار، يصدر هذا الدستور ليكون الحصن القانوني والدرع الواقي للولاية. يُعد هذا الميثاق ملزماً لكافة الأطراف، ويعلو فوق أي لوائح محلية لضمان الجاهزية التامة ضد كافة التهديدات الداخلية والخارجية.
             </p>
         </div>
+
+        <i class="fas fa-chevron-down" style="color: var(--gold-primary); animation: bounce 2s infinite;"></i>
     </section>
 
     <section class="constitution-container">
         
-        <!-- الفصل الأول -->
         <div class="chapter-title" data-aos="fade-right">
             <div class="chapter-line"></div>
-            <div class="chapter-text">الفصل الأول: السيادة والولاية الدولية</div>
+            <div class="chapter-text">الباب الأول: الأحكام العامة والسلطة</div>
             <div class="chapter-line"></div>
         </div>
 
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الأولى (١)</span>
-                <i class="fas fa-balance-scale-right" style="color: #333;"></i>
+                <i class="fas fa-gavel" style="color: #444;"></i>
             </div>
             <div class="article-body">
-                <h3>الاختصاص القضائي والأولوية (Supremacy Clause)</h3>
+                <h3>انعقاد الاختصاص والسيادة</h3>
                 <div class="article-content">
-                    تتمتع الوكالة بولاية فيدرالية عليا. في حال تضارب التعليمات بين الوكالة والسلطات المحلية في قضايا الأمن القومي، تسري تعليمات الوكالة بشكل فوري. لا يعني هذا إلغاء القوانين المحلية، بل تعليقها مؤقتاً لصالح الضرورة الأمنية القصوى.
+                    تُعتبر شرطة ولاية سان أندرياس (SASP) الجهة الأمنية العليا الممثلة لسلطة القانون في الولاية وخط الدفاع الأول للداخل. يمتد اختصاصها القضائي والميداني ليشمل كافة الأراضي والمقاطعات والمدن دون قيد جغرافي. تتمتع قراراتها بصفة <strong>"الأولوية التنفيذية"</strong> وتُلغي أي قرار يتعارض معها صادر عن جهات إنفاذ القانون المحلية (الشرطة المحلية أو مكاتب الشريف).
                 </div>
             </div>
         </div>
@@ -393,12 +362,12 @@
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الثانية (٢)</span>
-                <i class="fas fa-globe" style="color: #333;"></i>
+                <i class="fas fa-sitemap" style="color: #444;"></i>
             </div>
             <div class="article-body">
-                <h3>النطاق الخارجي والعمليات الدولية (International Operations)</h3>
+                <h3>تراتبية القيادة الميدانية</h3>
                 <div class="article-content">
-                    لا ينحصر عمل الوكالة داخل حدود الولاية فقط. تمتلك الوكالة تفويضاً لجمع المعلومات الاستخباراتية خارج الحدود، وتنفيذ عمليات وقائية ضد التهديدات الخارجية قبل وصولها للأراضي الوطنية. يشمل ذلك صلاحية التنسيق الدبلوماسي والأمني مع الجهات الأجنبية (Foreign Liaison) وإدارة الأصول والمصادر خارج البلاد بما يخدم المصلحة العليا.
+                    في حال تواجد وحدات متعددة من قطاعات مختلفة في مسرح عمليات واحد، تنتقل <strong>القيادة والسيطرة (Command & Control)</strong> بشكل تلقائي وفوري إلى الضابط الأعلى رتبة من شرطة الولاية المتواجد في الموقع. تلتزم كافة القطاعات الأخرى بالعمل تحت إمرته كقوات إسناد، ويُعد عدم الامتثال لتعليماته عرقلةً لسير العدالة وتهديداً لوحدة الصف الأمني.
                 </div>
             </div>
         </div>
@@ -406,32 +375,25 @@
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الثالثة (٣)</span>
-                <i class="fas fa-dungeon" style="color: #333;"></i>
+                <i class="fas fa-eye" style="color: #444;"></i>
             </div>
             <div class="article-body">
-                <h3>حرمة المقرات الفيدرالية (Restricted Areas)</h3>
+                <h3>الرقابة المؤسسية</h3>
                 <div class="article-content">
-                    تُصنف مقرات الوكالة كـ <strong>"مناطق فيدرالية محرمة"</strong>. يُمنع دخول أي شخص (عسكري أو مدني) دون تصريح خاص. التواجد غير المصرح به في محيط هذه المقرات يعتبر تعدياً على الأمن القومي ويخول الحراس استخدام القوة والاعتقال الفوري.
+                    تتولى شرطة الولاية، بتفويض من وزارة العدل، مهام الرقابة والتفتيش على الأداء الأمني العام. يحق للمكتب المختص في SASP فتح تحقيقات في أي شبهات فساد أو تجاوزات إدارية وجنائية تصدر عن منسوبي القطاعات الأمنية الأخرى، ورفع التوصيات الملزمة بشأنها.
                 </div>
             </div>
-        </div>
-
-        <!-- الفصل الثاني -->
-        <div class="chapter-title" data-aos="fade-right">
-            <div class="chapter-line"></div>
-            <div class="chapter-text">الفصل الثاني: العمليات الميدانية والخاصة</div>
-            <div class="chapter-line"></div>
         </div>
 
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الرابعة (٤)</span>
-                <i class="fas fa-bullhorn" style="color: #333;"></i>
+                <i class="fas fa-road" style="color: #444;"></i>
             </div>
             <div class="article-body">
-                <h3>إعلان مناطق العمليات (Active Zones)</h3>
+                <h3>الولاية على الطرق والمنافذ</h3>
                 <div class="article-content">
-                    يحق للعملاء إعلان أي موقع "منطقة عمليات نشطة"، مما يوجب على جميع الأطراف (بمن فيهم الشرطة) الإخلاء الفوري. يهدف هذا الإجراء لحماية مسرح العمليات والأدلة الحساسة من التلوث أو التسريب.
+                    تخضع جميع الطرق السريعة (Highways)، والمنافذ الحدودية، والمناطق الفيدرالية لسيطرة شرطة الولاية بشكل حصري. تختص وحدات SASP بالتعامل مع المطاردات عالية السرعة، ورصد <strong>تحركات القوى المعادية</strong> عبر الولايات، ونقل المطلوبين الخطرين.
                 </div>
             </div>
         </div>
@@ -439,12 +401,12 @@
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الخامسة (٥)</span>
-                <i class="fas fa-user-ninja" style="color: #333;"></i>
+                <i class="fas fa-file-contract" style="color: #444;"></i>
             </div>
             <div class="article-body">
-                <h3>العمليات السرية غير المعلنة (Clandestine Black Ops)</h3>
+                <h3>المرجعية والحصانة</h3>
                 <div class="article-content">
-                    يحق للوكالة تنفيذ مهام استخباراتية دقيقة دون الإعلان عن "منطقة عمليات" رسمية (Unmarked Operations). في هذه الحالات، يعمل العملاء تحت غطاء السرية التامة. إذا اعترضتهم جهات إنفاذ القانون المحلية، يكتفي العميل بإبراز "الرمز الكودي للمهمة" (Code Red)، ويُلزم الطرف الآخر بالانسحاب فوراً دون طلب تفاصيل، حفاظاً على سرية المهمة وتجنباً لكشف الغطاء.
+                    يتمتع ضباط شرطة الولاية بحصانة إجرائية أثناء تأدية مهامهم الرسمية. المرجعية الإدارية والقانونية الوحيدة لشرطة الولاية هي <strong>وزارة العدل (DOJ)</strong>، ولا يحق لأي جهة سياسية أو مدنية أخرى التدخل في العمليات أو القرارات الداخلية للقطاع.
                 </div>
             </div>
         </div>
@@ -452,58 +414,26 @@
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة السادسة (٦)</span>
-                <i class="fas fa-users-cog" style="color: #333;"></i>
+                <i class="fas fa-crown" style="color: #444;"></i>
             </div>
             <div class="article-body">
-                <h3>صلاحيات التجنيد والتعاقد الاستثنائي (Assets & Contractors)</h3>
+                <h3>احترام الهيبة والتمثيل السيادي</h3>
                 <div class="article-content">
-                    تمتلك الوكالة الصلاحية الكاملة لتجنيد وتوظيف الأفراد من خارج الجهاز (مدنيين، عسكريين، خبراء تقنيين) كـ "متعاقدين" أو "أصول استخباراتية" لتنفيذ مهام محددة. يتمتع هؤلاء الأفراد بحماية قانونية محدودة تغطي نطاق مهامهم فقط، وتعتبر أي محاولة لعرقلة عملهم من قبل جهات أخرى إعاقة لعمل الوكالة المباشر.
+                    يلتزم كافة المواطنين والموظفين في القطاعات الحكومية والخاصة باحترام هيبة ضباط شرطة الولاية وتقدير مكانتهم. تُعد أي إساءة لفظية أو جسدية، أو تقليل من شأنهم، إساءةً مباشرة وتعدياً صريحاً على <strong>وزارة العدل (DOJ)</strong> بصفتها الجهة العليا والسلطة التشريعية للدولة. يُعاقب مرتكب هذه المخالفة بأشد العقوبات المنصوص عليها، باعتبارها جريمة تمس أمن وسيادة الدولة.
                 </div>
             </div>
         </div>
 
-        <!-- الفصل الثالث -->
-        <div class="chapter-title" data-aos="fade-right">
-            <div class="chapter-line"></div>
-            <div class="chapter-text">الفصل الثالث: الرقابة والأحكام العامة</div>
-            <div class="chapter-line"></div>
-        </div>
-
-        <div class="article-card" data-aos="fade-up">
+        <!-- المادة الجديدة الخاصة بالقوى المعادية -->
+        <div class="article-card threat-level" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة السابعة (٧)</span>
-                <i class="fas fa-search-dollar" style="color: #333;"></i>
+                <i class="fas fa-shield-virus" style="color: #c0392b;"></i>
             </div>
             <div class="article-body">
-                <h3>مكتب المفتش العام والرقابة الداخلية (Internal Oversight)</h3>
+                <h3>التعامل مع القوى والكيانات المعادية</h3>
                 <div class="article-content">
-                    لضمان عدم إساءة استخدام السلطة، تخضع الوكالة لنظام رقابة صارم عبر "مكتب المفتش العام" (IG). هذا المكتب مسؤول عن التحقيق في أي تجاوزات يرتكبها العملاء. ونظراً للطبيعة السرية للعمل، فإن المساءلة تكون **داخلية وحصرية**؛ حيث لا تخضع سجلات الوكالة أو موظفيها للتحقيق من قبل الشرطة أو الادعاء العام العادي، بل تتم المحاسبة وفق القوانين الفيدرالية الخاصة بالجهاز.
-                </div>
-            </div>
-        </div>
-
-        <div class="article-card" data-aos="fade-up">
-            <div class="article-header">
-                <span class="article-number">المادة الثامنة (٨)</span>
-                <i class="fas fa-file-contract" style="color: #333;"></i>
-            </div>
-            <div class="article-body">
-                <h3>حماية المعلومات والهوية (Classified Info Act)</h3>
-                <div class="article-content">
-                    هويات العملاء، وتفاصيل العمليات، وأسماء المتعاقدين هي "معلومات سرية للغاية". يحظر القانون الفيدرالي على أي جهة محلية محاولة كشف هذه المعلومات أو تداولها. يعتبر أي تسريب خطراً على الأمن القومي يستوجب الملاحقة الجنائية الفيدرالية.
-                </div>
-            </div>
-        </div>
-
-        <div class="article-card" data-aos="fade-up" style="border-color: var(--agency-red);">
-            <div class="article-header" style="background: rgba(192, 57, 43, 0.1);">
-                <span class="article-number">المادة التاسعة (٩)</span>
-                <i class="fas fa-crown" style="color: var(--agency-red);"></i>
-            </div>
-            <div class="article-body">
-                <h3 style="color: var(--agency-red);">الاحترام الإلزامي والامتثال (Authority Compliance)</h3>
-                <div class="article-content">
-                    يمثل عميل الاستخبارات هيبة الدولة الفيدرالية. أي سلوك يتضمن قلة احترام، أو إساءة لفظية، أو تحدٍ لسلطة العميل، يُكيف قانونياً كـ <strong>"جناية إعاقة إنفاذ القانون الفيدرالي"</strong>. هذا التصنيف يمنح الوكالة الحق في توقيف المخالف فوراً واتخاذ الإجراءات القانونية الرادعة، لضمان فرض النظام واحترام السلطة العليا.
+                    تقر الولاية بوجود <strong>قوى معادية (Hostile Forces)</strong> وتنظيمات مسلحة تسعى لزعزعة الأمن العام. وعليه، تُمنح وحدات شرطة الولاية (SASP) صلاحيات استثنائية للتعامل مع هذه التهديدات. يشمل ذلك حق استخدام التكتيكات شبه العسكرية (Paramilitary Tactics)، وفرض المناطق المحظورة، والتعامل الحازم والفوري مع أي كيان مسلح يهدد استقرار الدولة، باعتبار شرطة الولاية الدرع الحصين أمام أي قوة تحاول اختراق سيادة القانون.
                 </div>
             </div>
         </div>
@@ -511,8 +441,8 @@
     </section>
 
     <footer>
-        <div class="doj-ref">وكالة الاستخبارات المركزية | CAI</div>
-        <p class="copy-right">WARNING: RESTRICTED ACCESS - FEDERAL PROPERTY &copy; <script>document.write(new Date().getFullYear())</script></p>
+        <div class="doj-ref">وزارة العدل | Department of Justice</div>
+        <p class="copy-right">وثيقة مصادق عليها إلكترونياً - صالحة للعمل بموجب قوانين سان أندرياس &copy; <script>document.write(new Date().getFullYear())</script></p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
