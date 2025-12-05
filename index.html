@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الملف الأسود | وكالة الاستخبارات CAI</title>
+    <title>البروتوكول الشامل | وكالة الاستخبارات CAI</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,10 +38,9 @@
             color: var(--text-white);
             font-family: 'Cairo', sans-serif;
             overflow-x: hidden;
-            line-height: 2;
+            line-height: 1.8;
         }
 
-        /* شاشة التمهيد */
         #secure-boot {
             position: fixed;
             top: 0; right: 0; bottom: 0; left: 0;
@@ -206,6 +205,7 @@
             align-items: center;
             gap: 20px;
             margin-bottom: 50px;
+            margin-top: 50px;
         }
         .chapter-line {
             height: 2px;
@@ -218,6 +218,7 @@
             font-size: 1.6rem;
             font-weight: 700;
             text-shadow: 0 0 10px rgba(255,255,255,0.2);
+            white-space: nowrap;
         }
 
         .article-card {
@@ -326,19 +327,20 @@
             .hero-title { font-size: 2.5rem; }
             header { padding: 15px; flex-direction: column; gap: 15px;}
             .article-body { padding: 20px; }
+            .chapter-text { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
     <div id="secure-boot">
-        <div class="boot-text">TOP SECRET // CAI MAINFRAME</div>
+        <div class="boot-text">CAI MAINFRAME // ACCESS GRANTED</div>
         <div class="progress-line"></div>
-        <div style="margin-top: 15px; font-size: 12px; color: #666;">BIOMETRIC SCAN IN PROGRESS...</div>
+        <div style="margin-top: 15px; font-size: 12px; color: #666;">LOADING FEDERAL PROTOCOLS...</div>
     </div>
 
-    <i class="fas fa-eye watermark"></i>
-    <div class="stamp">CLASSIFIED</div>
+    <i class="fas fa-globe-americas watermark"></i>
+    <div class="stamp">TOP SECRET</div>
 
     <header>
         <div class="department-logo">
@@ -349,30 +351,29 @@
             </div>
         </div>
         <div class="clearance-badge">
-            البروتوكول الأمني الفيدرالي
+            اللائحة التنفيذية العليا - نسخة مصدقة
         </div>
     </header>
 
     <section class="hero">
         <div data-aos="fade-down" data-aos-duration="1200">
-            <div class="hero-subtitle">السلطة الفيدرالية العليا</div>
-            <h2 class="hero-title">اللائحة التنظيمية الموحدة</h2>
+            <div class="hero-subtitle">استمرارية الدولة وحماية المصالح</div>
+            <h2 class="hero-title">الدستور التشغيلي الموحد</h2>
         </div>
 
         <div class="decree-box" data-aos="fade-up" data-aos-delay="200">
             <p class="decree-text">
-                تعمل وكالة الاستخبارات المركزية (CAI) بموجب تفويض <strong>"استمرارية الحكومة والأمن القومي"</strong>. في ظل غياب السلطة التنفيذية المركزية (الرئاسة)، تُناط بالوكالة مسؤولية الحفاظ على هيكل الدولة. تخضع الوكالة للقوانين المحلية في الظروف العادية، ولكن في حالات تضارب المصالح مع الأمن القومي، يمنحها القانون الفيدرالي "شرط السيادة" (Supremacy Clause) لتجاوز الإجراءات الروتينية واتخاذ التدابير الاستثنائية اللازمة.
+                وفقاً لبروتوكولات <strong>"الأمن القومي الشامل"</strong>، تعمل وكالة الاستخبارات المركزية (CAI) كجهاز فيدرالي سيادي مسؤول عن حماية مصالح الدولة في الداخل والخارج. تتمتع الوكالة بصلاحيات استثنائية تتجاوز الحدود التقليدية لإنفاذ القانون، وتخضع لرقابة داخلية صارمة لضمان الالتزام بمعايير المهنية، مع الاحتفاظ بحقها في اتخاذ تدابير سرية وحاسمة لحماية النظام العام.
             </p>
         </div>
-
-        <i class="fas fa-fingerprint" style="color: var(--agency-red); font-size: 2rem; opacity: 0.7;"></i>
     </section>
 
     <section class="constitution-container">
         
+        <!-- الفصل الأول -->
         <div class="chapter-title" data-aos="fade-right">
             <div class="chapter-line"></div>
-            <div class="chapter-text">الفصل الأول: الصلاحيات والاختصاص</div>
+            <div class="chapter-text">الفصل الأول: السيادة والولاية الدولية</div>
             <div class="chapter-line"></div>
         </div>
 
@@ -382,25 +383,22 @@
                 <i class="fas fa-balance-scale-right" style="color: #333;"></i>
             </div>
             <div class="article-body">
-                <h3>الاختصاص القضائي والأولوية (Supremacy of Jurisdiction)</h3>
+                <h3>الاختصاص القضائي والأولوية (Supremacy Clause)</h3>
                 <div class="article-content">
-                    تتمتع وكالة الاستخبارات المركزية بولاية قضائية فيدرالية تشمل كافة أراضي الدولة. في حال حدوث تعارض بين تعليمات الوكالة والقوانين المحلية (الشرطة أو الحكومة المحلية) في مسرح عمليات يهدد الأمن القومي، تكون الأولوية القانونية لتعليمات الوكالة استناداً إلى مبدأ "حفظ النظام العام الفيدرالي". هذا الامتياز لا يعني إلغاء القانون المحلي، بل تعليقه مؤقتاً لصالح الضرورة الأمنية القصوى.
+                    تتمتع الوكالة بولاية فيدرالية عليا. في حال تضارب التعليمات بين الوكالة والسلطات المحلية في قضايا الأمن القومي، تسري تعليمات الوكالة بشكل فوري. لا يعني هذا إلغاء القوانين المحلية، بل تعليقها مؤقتاً لصالح الضرورة الأمنية القصوى.
                 </div>
             </div>
         </div>
 
-        <!-- المادة الجديدة الخاصة بالمقرات -->
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الثانية (٢)</span>
-                <i class="fas fa-dungeon" style="color: #333;"></i>
+                <i class="fas fa-globe" style="color: #333;"></i>
             </div>
             <div class="article-body">
-                <h3>حرمة المقرات الفيدرالية (Restricted Federal Areas)</h3>
+                <h3>النطاق الخارجي والعمليات الدولية (International Operations)</h3>
                 <div class="article-content">
-                    تُصنف كافة المباني، والمكاتب، والمراكز الميدانية التابعة لوكالة الاستخبارات المركزية (CAI) كـ <strong>"مناطق فيدرالية محظورة"</strong> من الدرجة الأولى. 
-                    <br><br>
-                    يُمنع منعاً باتاً دخول أي كائن بشري لهذه المناطق، سواء كان (ضابط شرطة، قائد عسكري، مسعف، مسؤول حكومي، أو مواطن) دون تصريح أمني خاص من المستوى الخامس. يُعتبر مجرد التواجد في محيط هذه المقرات دون إذن "تعدياً على ممتلكات فيدرالية حساسة"، ويخول حراس الوكالة استخدام القوة المميتة للدفاع عن المنشأة، والاعتقال الفوري للمتسللين بتهمة التجسس الداخلي.
+                    لا ينحصر عمل الوكالة داخل حدود الولاية فقط. تمتلك الوكالة تفويضاً لجمع المعلومات الاستخباراتية خارج الحدود، وتنفيذ عمليات وقائية ضد التهديدات الخارجية قبل وصولها للأراضي الوطنية. يشمل ذلك صلاحية التنسيق الدبلوماسي والأمني مع الجهات الأجنبية (Foreign Liaison) وإدارة الأصول والمصادر خارج البلاد بما يخدم المصلحة العليا.
                 </div>
             </div>
         </div>
@@ -408,38 +406,104 @@
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الثالثة (٣)</span>
-                <i class="fas fa-ban" style="color: #333;"></i>
+                <i class="fas fa-dungeon" style="color: #333;"></i>
             </div>
             <div class="article-body">
-                <h3>بروتوكول عزل المنطقة (Operational Perimeter)</h3>
+                <h3>حرمة المقرات الفيدرالية (Restricted Areas)</h3>
                 <div class="article-content">
-                    يحق لعملاء الوكالة الميدانيين إعلان أي موقع جغرافي "منطقة عمليات نشطة" (Active Zone). بموجب القانون الفيدرالي، يُلزم هذا الإعلان جميع الأطراف غير المصرح لها (بما في ذلك دوريات الشرطة المحلية وقوات الجيش غير المشاركة) بإخلاء الموقع فوراً للحفاظ على سرية الأدلة وسلامة الإجراءات. عدم الامتثال لأمر الإخلاء يُعد "عرقلة لعمل فيدرالي" (Obstruction of Justice) ويعرض المخالف للمساءلة القانونية المشددة.
+                    تُصنف مقرات الوكالة كـ <strong>"مناطق فيدرالية محرمة"</strong>. يُمنع دخول أي شخص (عسكري أو مدني) دون تصريح خاص. التواجد غير المصرح به في محيط هذه المقرات يعتبر تعدياً على الأمن القومي ويخول الحراس استخدام القوة والاعتقال الفوري.
+                </div>
+            </div>
+        </div>
+
+        <!-- الفصل الثاني -->
+        <div class="chapter-title" data-aos="fade-right">
+            <div class="chapter-line"></div>
+            <div class="chapter-text">الفصل الثاني: العمليات الميدانية والخاصة</div>
+            <div class="chapter-line"></div>
+        </div>
+
+        <div class="article-card" data-aos="fade-up">
+            <div class="article-header">
+                <span class="article-number">المادة الرابعة (٤)</span>
+                <i class="fas fa-bullhorn" style="color: #333;"></i>
+            </div>
+            <div class="article-body">
+                <h3>إعلان مناطق العمليات (Active Zones)</h3>
+                <div class="article-content">
+                    يحق للعملاء إعلان أي موقع "منطقة عمليات نشطة"، مما يوجب على جميع الأطراف (بمن فيهم الشرطة) الإخلاء الفوري. يهدف هذا الإجراء لحماية مسرح العمليات والأدلة الحساسة من التلوث أو التسريب.
                 </div>
             </div>
         </div>
 
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
-                <span class="article-number">المادة الرابعة (٤)</span>
+                <span class="article-number">المادة الخامسة (٥)</span>
+                <i class="fas fa-user-ninja" style="color: #333;"></i>
+            </div>
+            <div class="article-body">
+                <h3>العمليات السرية غير المعلنة (Clandestine Black Ops)</h3>
+                <div class="article-content">
+                    يحق للوكالة تنفيذ مهام استخباراتية دقيقة دون الإعلان عن "منطقة عمليات" رسمية (Unmarked Operations). في هذه الحالات، يعمل العملاء تحت غطاء السرية التامة. إذا اعترضتهم جهات إنفاذ القانون المحلية، يكتفي العميل بإبراز "الرمز الكودي للمهمة" (Code Red)، ويُلزم الطرف الآخر بالانسحاب فوراً دون طلب تفاصيل، حفاظاً على سرية المهمة وتجنباً لكشف الغطاء.
+                </div>
+            </div>
+        </div>
+
+        <div class="article-card" data-aos="fade-up">
+            <div class="article-header">
+                <span class="article-number">المادة السادسة (٦)</span>
+                <i class="fas fa-users-cog" style="color: #333;"></i>
+            </div>
+            <div class="article-body">
+                <h3>صلاحيات التجنيد والتعاقد الاستثنائي (Assets & Contractors)</h3>
+                <div class="article-content">
+                    تمتلك الوكالة الصلاحية الكاملة لتجنيد وتوظيف الأفراد من خارج الجهاز (مدنيين، عسكريين، خبراء تقنيين) كـ "متعاقدين" أو "أصول استخباراتية" لتنفيذ مهام محددة. يتمتع هؤلاء الأفراد بحماية قانونية محدودة تغطي نطاق مهامهم فقط، وتعتبر أي محاولة لعرقلة عملهم من قبل جهات أخرى إعاقة لعمل الوكالة المباشر.
+                </div>
+            </div>
+        </div>
+
+        <!-- الفصل الثالث -->
+        <div class="chapter-title" data-aos="fade-right">
+            <div class="chapter-line"></div>
+            <div class="chapter-text">الفصل الثالث: الرقابة والأحكام العامة</div>
+            <div class="chapter-line"></div>
+        </div>
+
+        <div class="article-card" data-aos="fade-up">
+            <div class="article-header">
+                <span class="article-number">المادة السابعة (٧)</span>
+                <i class="fas fa-search-dollar" style="color: #333;"></i>
+            </div>
+            <div class="article-body">
+                <h3>مكتب المفتش العام والرقابة الداخلية (Internal Oversight)</h3>
+                <div class="article-content">
+                    لضمان عدم إساءة استخدام السلطة، تخضع الوكالة لنظام رقابة صارم عبر "مكتب المفتش العام" (IG). هذا المكتب مسؤول عن التحقيق في أي تجاوزات يرتكبها العملاء. ونظراً للطبيعة السرية للعمل، فإن المساءلة تكون **داخلية وحصرية**؛ حيث لا تخضع سجلات الوكالة أو موظفيها للتحقيق من قبل الشرطة أو الادعاء العام العادي، بل تتم المحاسبة وفق القوانين الفيدرالية الخاصة بالجهاز.
+                </div>
+            </div>
+        </div>
+
+        <div class="article-card" data-aos="fade-up">
+            <div class="article-header">
+                <span class="article-number">المادة الثامنة (٨)</span>
                 <i class="fas fa-file-contract" style="color: #333;"></i>
             </div>
             <div class="article-body">
-                <h3>الحماية القانونية للمعلومات (Classified Information Act)</h3>
+                <h3>حماية المعلومات والهوية (Classified Info Act)</h3>
                 <div class="article-content">
-                    تخضع جميع سجلات الوكالة وهويات عملائها لقانون "حماية المعلومات السرية". لا تملك المحاكم المحلية أو إدارات الشرطة الصلاحية لطلب الكشف عن هوية عميل أو الاطلاع على ملفات تحقيق جارية تحت ذريعة الإجراءات الروتينية. يُعتبر أي تسريب لهذه المعلومات أو محاولة للحصول عليها بالقوة خرقاً للأمن القومي يستوجب المحاكمة أمام القضاء الفيدرالي المختص.
+                    هويات العملاء، وتفاصيل العمليات، وأسماء المتعاقدين هي "معلومات سرية للغاية". يحظر القانون الفيدرالي على أي جهة محلية محاولة كشف هذه المعلومات أو تداولها. يعتبر أي تسريب خطراً على الأمن القومي يستوجب الملاحقة الجنائية الفيدرالية.
                 </div>
             </div>
         </div>
 
         <div class="article-card" data-aos="fade-up" style="border-color: var(--agency-red);">
             <div class="article-header" style="background: rgba(192, 57, 43, 0.1);">
-                <span class="article-number">المادة الخامسة (٥)</span>
+                <span class="article-number">المادة التاسعة (٩)</span>
                 <i class="fas fa-crown" style="color: var(--agency-red);"></i>
             </div>
             <div class="article-body">
-                <h3 style="color: var(--agency-red);">الاحترام والامتثال للسلطة (Authority Compliance)</h3>
+                <h3 style="color: var(--agency-red);">الاحترام الإلزامي والامتثال (Authority Compliance)</h3>
                 <div class="article-content">
-                    يمثل عميل الاستخبارات سلطة القانون الفيدرالي في الميدان. واستناداً إلى لوائح الانضباط العام، فإن أي سلوك يتسم بالازدراء، أو الإهانة اللفظية، أو التحدي الصريح لتعليمات العميل، لا يُعامل كخلاف شخصي، بل يُكيف قانونياً كـ <strong>"جناية إعاقة إنفاذ القانون الفيدرالي"</strong>. هذا التصنيف يمنح الوكالة الحق في توقيف المخالف واتخاذ الإجراءات التأديبية والقانونية القصوى لضمان هيبة الدولة وفرض احترام النظام.
+                    يمثل عميل الاستخبارات هيبة الدولة الفيدرالية. أي سلوك يتضمن قلة احترام، أو إساءة لفظية، أو تحدٍ لسلطة العميل، يُكيف قانونياً كـ <strong>"جناية إعاقة إنفاذ القانون الفيدرالي"</strong>. هذا التصنيف يمنح الوكالة الحق في توقيف المخالف فوراً واتخاذ الإجراءات القانونية الرادعة، لضمان فرض النظام واحترام السلطة العليا.
                 </div>
             </div>
         </div>
