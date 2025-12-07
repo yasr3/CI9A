@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>التوجيهات التشغيلية المشتركة | Title 50 US Code</title>
+    <title>الدستور التشغيلي للوكالة | Internal Charter</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,10 @@
     <style>
         :root {
             --bg-dark: #0a0a0a;
-            --agency-blue: #2c3e50; /* تغيير للأزرق الداكن/الرمادي ليعكس الطابع الرسمي الواقعي */
-            --agency-accent: #3498db;
+            --agency-primary: #1a1a1a;
+            --agency-accent: #c0392b; /* العودة للأحمر الغامق ليعطي طابع القوة */
             --text-white: #e0e0e0;
-            --text-legal: #b0b0b0;
+            --text-gold: #d4af37;
         }
 
         * {
@@ -33,15 +33,15 @@
         body {
             background-color: var(--bg-dark);
             background-image: 
-                radial-gradient(circle at 50% 50%, rgba(52, 152, 219, 0.05) 0%, transparent 60%),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30h1v1h-1z' fill='%23333' fill-opacity='0.2'/%3E%3C/svg%3E");
+                linear-gradient(rgba(10,10,10,0.9), rgba(10,10,10,0.95)),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30h1v1h-1z' fill='%23222' fill-opacity='0.4'/%3E%3C/svg%3E");
             color: var(--text-white);
             font-family: 'Cairo', sans-serif;
             overflow-x: hidden;
             line-height: 1.8;
         }
 
-        /* شاشة التحميل الآمنة */
+        /* شاشة التمهيد */
         #secure-boot {
             position: fixed;
             top: 0; right: 0; bottom: 0; left: 0;
@@ -54,28 +54,27 @@
             font-family: 'Courier New', monospace;
         }
         .boot-text {
-            color: var(--text-white);
+            color: var(--agency-accent);
             font-size: 1.5rem;
             margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             font-weight: bold;
         }
         .progress-line {
-            width: 400px;
-            height: 2px;
-            background: #222;
+            width: 300px;
+            height: 3px;
+            background: #333;
             position: relative;
-            overflow: hidden;
         }
         .progress-line::after {
             content: '';
             position: absolute;
-            left: -100%;
-            width: 100%;
+            left: 0; top: 0;
+            width: 0%;
             height: 100%;
             background: var(--agency-accent);
-            animation: scan 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: load 2s ease-in-out forwards;
         }
 
         header {
@@ -86,8 +85,8 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(10, 10, 10, 0.98);
-            border-bottom: 1px solid #333;
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 3px solid var(--agency-accent);
         }
         
         .department-logo {
@@ -96,36 +95,38 @@
             gap: 15px;
         }
         .department-logo i {
-            font-size: 2rem;
-            color: #ccc;
+            font-size: 2.2rem;
+            color: var(--text-white);
         }
         .dept-info h1 {
             font-family: 'Tajawal', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 800;
             letter-spacing: 1px;
             color: #fff;
             text-transform: uppercase;
         }
         .dept-info span {
-            font-size: 0.7rem;
-            color: #888;
-            letter-spacing: 1px;
+            font-size: 0.75rem;
+            color: var(--agency-accent);
+            letter-spacing: 2px;
             display: block;
+            font-weight: bold;
         }
 
         .clearance-badge {
-            border: 1px solid #444;
-            padding: 6px 20px;
-            font-size: 0.65rem;
-            color: #aaa;
+            background: #222;
+            border: 1px solid var(--agency-accent);
+            padding: 8px 20px;
+            font-size: 0.7rem;
+            color: var(--agency-accent);
             letter-spacing: 1px;
-            text-transform: uppercase;
-            background: rgba(255, 255, 255, 0.05);
+            font-weight: 700;
+            border-radius: 2px;
         }
 
         .hero {
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -137,44 +138,47 @@
         
         .hero-title {
             font-family: 'Tajawal', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
+            font-size: 4rem;
+            font-weight: 900;
             margin-bottom: 15px;
             color: #fff;
             text-transform: uppercase;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         
         .hero-subtitle {
             color: var(--agency-accent);
-            font-size: 1.1rem;
-            letter-spacing: 4px;
+            font-size: 1.4rem;
+            letter-spacing: 6px;
             margin-bottom: 40px;
             text-transform: uppercase;
             font-family: 'Tajawal', sans-serif;
         }
 
         .decree-box {
-            background: #111;
-            border-left: 4px solid var(--agency-accent);
-            padding: 35px;
+            background: linear-gradient(145deg, #151515, #0d0d0d);
+            border-right: 5px solid var(--agency-accent);
+            padding: 40px;
             max-width: 900px;
             text-align: justify;
             margin-bottom: 50px;
-            border: 1px solid #222;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            position: relative;
         }
         
         .decree-text {
-            font-size: 1rem;
-            color: var(--text-legal);
-            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.9;
         }
         .decree-text strong {
-            color: #ddd;
-            font-weight: 600;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: underline decoration-color(var(--agency-accent));
         }
 
         .constitution-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 50px 20px;
         }
@@ -183,188 +187,204 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-bottom: 40px;
-            margin-top: 50px;
+            margin-bottom: 60px;
+            margin-top: 80px;
         }
         .chapter-line {
-            height: 1px;
-            background: #333;
+            height: 3px;
+            background: #222;
             flex-grow: 1;
+            position: relative;
         }
         .chapter-text {
-            color: #888;
+            color: var(--agency-accent);
             font-family: 'Tajawal', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            font-weight: 800;
             text-transform: uppercase;
+            background: var(--bg-dark);
+            padding: 0 20px;
+            border: 1px solid #222;
         }
 
         .article-card {
-            background: #0f0f0f;
+            background: #111;
             border: 1px solid #222;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             padding: 0;
-            transition: all 0.3s ease;
+            transition: transform 0.3s;
+            position: relative;
         }
         .article-card:hover {
-            border-color: #444;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+            border-color: var(--agency-accent);
         }
 
         .article-header {
-            background: #161616;
-            padding: 15px 30px;
-            border-bottom: 1px solid #222;
+            background: #1a1a1a;
+            padding: 20px 35px;
+            border-bottom: 1px solid #252525;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .article-number {
             font-family: 'Tajawal', sans-serif;
-            color: var(--agency-accent);
-            font-weight: 700;
-            font-size: 1rem;
+            color: var(--text-gold);
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
         }
         
         .article-body {
-            padding: 35px;
+            padding: 40px;
         }
         .article-body h3 {
             font-family: 'Tajawal', sans-serif;
-            color: #eee;
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            font-weight: 600;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
+        .article-body h3 i {
+            color: var(--agency-accent);
+            font-size: 1.2rem;
+        }
+
         .article-content {
-            color: #aaa;
+            color: #bbb;
             text-align: justify;
-            font-size: 1rem;
-            padding-left: 15px;
-            border-left: 2px solid #222;
-        }
-        .article-content p {
-            margin-bottom: 12px;
+            font-size: 1.1rem;
+            padding-left: 20px;
+            border-left: 2px solid var(--agency-accent);
         }
         
-        /* تنسيق القوائم النقطية */
+        .article-content p {
+            margin-bottom: 15px;
+        }
+
         .article-content ul {
             list-style: none;
-            margin-top: 10px;
-            padding-right: 10px;
+            margin-top: 15px;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 4px;
         }
         .article-content ul li {
             position: relative;
-            padding-right: 20px;
-            margin-bottom: 8px;
-            color: #999;
+            padding-right: 25px;
+            margin-bottom: 10px;
+            color: #ccc;
         }
         .article-content ul li::before {
-            content: "•";
+            content: "➤";
             color: var(--agency-accent);
-            font-weight: bold;
+            font-size: 0.8rem;
             position: absolute;
             right: 0;
+            top: 5px;
         }
 
         .stamp {
             position: fixed;
-            bottom: 50px; left: 50px;
-            border: 3px solid #333;
-            color: #333;
+            bottom: 40px; left: 40px;
+            border: 4px solid var(--agency-accent);
+            color: var(--agency-accent);
             font-size: 2.5rem;
             font-weight: 900;
-            padding: 10px 20px;
+            padding: 10px 25px;
             text-transform: uppercase;
-            opacity: 0.2;
-            transform: rotate(-30deg);
+            opacity: 0.1;
+            transform: rotate(-25deg);
             pointer-events: none;
             z-index: 0;
-            font-family: sans-serif;
+            font-family: 'Impact', sans-serif;
+            letter-spacing: 5px;
         }
 
         footer {
             text-align: center;
-            padding: 60px 20px;
-            border-top: 1px solid #222;
-            margin-top: 80px;
-            background: #080808;
+            padding: 80px 20px;
+            border-top: 2px solid #222;
+            margin-top: 100px;
+            background: #050505;
         }
-        .footer-alert {
-            display: block;
-            margin-top: 15px;
-            color: #666;
-            font-size: 0.8rem;
+        .ref-code {
+            color: #555;
             font-family: monospace;
+            margin-top: 20px;
+            display: block;
         }
 
-        @keyframes scan {
-            0% { left: -100%; }
-            100% { left: 100%; }
+        @keyframes load {
+            0% { width: 0%; }
+            100% { width: 100%; }
         }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            header { padding: 15px; flex-direction: column; gap: 15px;}
-            .article-body { padding: 20px; }
+            .hero-title { font-size: 2.8rem; }
+            header { padding: 15px; flex-direction: column; gap: 15px; border-bottom: 1px solid var(--agency-accent);}
+            .chapter-text { font-size: 1.3rem; }
+            .article-body { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
     <div id="secure-boot">
-        <div class="boot-text">US GOV SYSTEM // ACCESS GRANTED</div>
+        <div class="boot-text">ESTABLISHING SECURE LINK...</div>
         <div class="progress-line"></div>
-        <div style="margin-top: 15px; font-size: 12px; color: #555;">RETRIEVING TITLE 50 PROTOCOLS...</div>
     </div>
 
-    <div class="stamp">OFFICIAL USE</div>
+    <div class="stamp">TOP SECRET // EYES ONLY</div>
 
     <header>
         <div class="department-logo">
-            <i class="fas fa-eagle"></i> <!-- تغيير الشعار لنسر يعكس الدولة بدلاً من الجاسوس -->
+            <i class="fas fa-user-secret"></i>
             <div class="dept-info">
-                <h1>الإطار التنظيمي المشترك</h1>
-                <span>Interagency Operational Framework</span>
+                <h1>وكالة الاستخبارات المركزية</h1>
+                <span>Central Intelligence Agency</span>
             </div>
         </div>
         <div class="clearance-badge">
-            UNCLASSIFIED // FOUO (For Official Use Only)
+            CONSTITUTIONAL CHARTER // LEVEL 5
         </div>
     </header>
 
     <section class="hero">
-        <div data-aos="fade-down" data-aos-duration="1200">
-            <div class="hero-subtitle">القانون الوطني للأمن لعام 1947 - وتعديلاته</div>
-            <h2 class="hero-title">اللوائح التنظيمية للعمليات الاستخباراتية</h2>
+        <div data-aos="fade-down" data-aos-duration="1000">
+            <div class="hero-subtitle">القسم والولاء - الحماية والسيادة</div>
+            <h2 class="hero-title">الدستور التشغيلي للوكالة</h2>
         </div>
 
         <div class="decree-box" data-aos="fade-up" data-aos-delay="200">
             <p class="decree-text">
-                تعمل وكالة الاستخبارات المركزية (CIA) بموجب التفويض الممنوح لها في <strong>Title 50 of the U.S. Code</strong> والأمر التنفيذي <strong>12333</strong>. تحدد هذه الوثيقة أطر التنسيق القانوني بين الوكالة وأجهزة إنفاذ القانون الفيدرالية والمحلية (Law Enforcement). تلتزم الوكالة بصرامة بالحدود الدستورية التي تفصل بين جمع المعلومات الخارجية والعمل الأمني الداخلي، مع ضمان التعاون الفعال لحماية الأمن القومي ضمن القنوات القانونية المعتمدة.
+                تُمثل هذه الوثيقة <strong>الركيزة الدستورية</strong> لعمل وكالة الاستخبارات المركزية. وبصفتها الذراع الطولى للدولة في حماية الأمن القومي، تتمتع الوكالة بتفويض استراتيجي شامل لإدارة المعلومات، وتحييد التهديدات، وتوجيه السياسات الأمنية العليا. يلتزم كافة المنتسبين ببنود هذا الدستور الذي يحدد <strong>سلطة الوكالة</strong> ومكانتها السيادية كخط الدفاع الأول والأخير عن مصالح الأمة.
             </p>
         </div>
     </section>
 
     <section class="constitution-container">
         
-        <!-- الفصل الأول: الاختصاص والصلاحيات -->
+        <!-- الفصل الأول -->
         <div class="chapter-title" data-aos="fade-right">
             <div class="chapter-line"></div>
-            <div class="chapter-text">الفصل الأول: الاختصاص القانوني والتنسيق</div>
+            <div class="chapter-text">الفصل الأول: التفويض والريادة الاستخباراتية</div>
             <div class="chapter-line"></div>
         </div>
 
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الأولى (١)</span>
-                <i class="fas fa-balance-scale" style="color: #444;"></i>
+                <i class="fas fa-chess-king"></i>
             </div>
             <div class="article-body">
-                <h3>نطاق الولاية (Jurisdiction Limitation)</h3>
+                <h3>سيادة المعلومات والأمن القومي (Intelligence Supremacy)</h3>
                 <div class="article-content">
-                    <p>تختص الوكالة بجمع وتحليل المعلومات الاستخباراتية المتعلقة بالتهديدات الخارجية والأمن القومي خارج حدود الولايات المتحدة. وفقاً لقانون الأمن القومي، <strong>لا تمتلك الوكالة صلاحيات إنفاذ القانون، ولا صلاحيات الاعتقال، ولا صلاحيات الشرطة داخل الولايات المتحدة.</strong></p>
-                    <p>أي نشاط محلي يتعلق بالأمن القومي يقع ضمن الاختصاص الحصري لمكتب التحقيقات الفيدرالي (FBI). يتم التنسيق بين الوكالتين عبر قنوات الاتصال المشتركة (Joint Terrorism Task Forces) لضمان تبادل المعلومات دون تجاوز الصلاحيات.</p>
+                    <p>تتمتع الوكالة بالحق الحصري والأولوية المطلقة في جمع، تحليل، وإدارة كافة المعلومات المتعلقة بالأمن القومي. تُعد الوكالة المرجع الأعلى للدولة في تقييم التهديدات، وتلتزم كافة الأجهزة الأخرى بتقديم الدعم اللازم لتمكين الوكالة من أداء مهامها السيادية.</p>
                 </div>
             </div>
         </div>
@@ -372,13 +392,12 @@
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الثانية (٢)</span>
-                <i class="fas fa-globe-americas" style="color: #444;"></i>
+                <i class="fas fa-globe"></i>
             </div>
             <div class="article-body">
-                <h3>العمليات الخارجية (Foreign Intelligence)</h3>
+                <h3>نطاق العمليات العالمي (Global Mandate)</h3>
                 <div class="article-content">
-                    <p>تعمل الوكالة بتفويض رئاسي مباشر (Presidential Finding) لتنفيذ مهام جمع المعلومات والعمليات السرية خارج الحدود الأمريكية.</p>
-                    <p>تخضع هذه العمليات لرقابة لجان الاستخبارات في الكونغرس (House & Senate Intelligence Committees) لضمان توافقها مع القوانين الأمريكية والمواثيق الدولية، ويتم التنسيق مع السفارات ووزارة الخارجية في الدول المعنية ما لم تقتضِ الضرورة العملياتية خلاف ذلك.</p>
+                    <p>يمتد النطاق التشغيلي للوكالة ليشمل أي نقطة جغرافية تتطلبها مصلحة الدولة العليا. تمتلك الوكالة التفويض الكامل لتنفيذ عمليات وقائية، استباقية، وسرية لضمان تحييد الأخطار قبل وقوعها، مع التنسيق عالي المستوى لضمان نجاح المهام.</p>
                 </div>
             </div>
         </div>
@@ -386,28 +405,28 @@
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الثالثة (٣)</span>
-                <i class="fas fa-shield-virus" style="color: #444;"></i>
+                <i class="fas fa-dungeon"></i>
             </div>
             <div class="article-body">
-                <h3>أمن المنشآت الفيدرالية (Facility Security)</h3>
+                <h3>حرمة المقرات والمنشآت (Facility Sanctity)</h3>
                 <div class="article-content">
-                    <p>تخضع مقرات الوكالة للحماية من قبل "خدمة الحماية الأمنية" (SPS) والشرطة الفيدرالية. تقتصر صلاحيات هؤلاء الضباط على تأمين المحيط المباشر للمنشأة والدفاع عن النفس والآخرين.</p>
-                    <p>يتم التعامل مع أي اختراق أمني بالتنسيق مع الشرطة المحلية، ولا يتم استخدام القوة المميتة إلا في حالات "الخطر الوشيك على الحياة" (Imminent Threat to Life) وفقاً للقواعد القياسية الفيدرالية لاستخدام القوة، وليس كصلاحية مطلقة.</p>
+                    <p>تُعتبر كافة مقرات ومنشآت الوكالة مناطق ذات طبيعة خاصة ومحمية بموجب بروتوكولات الأمن القصوى. يمتلك الفريق الأمني للوكالة الصلاحية الكاملة لاتخاذ كافة التدابير اللازمة لفرض السيطرة، منع التسلل، وحماية الأصول الحساسة داخل الحرم الأمني للوكالة.</p>
                 </div>
             </div>
         </div>
 
-        <!-- الفصل الثاني: الإجراءات الميدانية -->
+        <!-- الفصل الثاني -->
         <div class="chapter-title" data-aos="fade-right">
             <div class="chapter-line"></div>
-            <div class="chapter-text">الفصل الثاني: البروتوكولات الميدانية المشتركة</div>
+            <div class="chapter-text">الفصل الثاني: البروتوكولات الميدانية والتنسيق</div>
             <div class="chapter-line"></div>
         </div>
 
+        <!-- هنا تم وضع النص الخاص بك حرفياً -->
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الرابعة (٤)</span>
-                <i class="fas fa-handshake" style="color: #444;"></i>
+                <i class="fas fa-shield-alt"></i>
             </div>
             <div class="article-body">
                 <h3>بروتوكول التعاون الفيدرالي لتقييد الوصول (Federal Access Restriction Protocol)</h3>
@@ -428,13 +447,12 @@
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة الخامسة (٥)</span>
-                <i class="fas fa-network-wired" style="color: #444;"></i>
+                <i class="fas fa-handshake-angle"></i>
             </div>
             <div class="article-body">
-                <h3>منع تضارب العمليات (Deconfliction Mechanism)</h3>
+                <h3>التنسيق العملياتي ومنع التضارب (Operational Deconfliction)</h3>
                 <div class="article-content">
-                    <p>في حال تقاطع عملية سرية للوكالة مع نشاط روتيني للشرطة المحلية، لا يملك ضباط الوكالة صلاحية أمر الشرطة بالانسحاب المباشر.</p>
-                    <p>بدلاً من ذلك، يتم تفعيل "آلية منع التضارب" (Deconfliction) عبر الاتصال بمركز العمليات، ليقوم ضابط الارتباط (Liaison Officer) بالتواصل مع قيادة الشرطة أو FBI لشرح الموقف ضمن القنوات المصنفة، وطلب المساعدة أو الإخلاء بشكل رسمي وقانوني يحفظ سلامة الجميع وسرية المهمة.</p>
+                    <p>تقود الوكالة جهود التنسيق الميداني في القضايا ذات الطابع الاستخباراتي. يتم تفعيل آليات "منع التضارب" لضمان تكامل الأدوار بين الوكالة وجهات إنفاذ القانون، حيث تتولى الوكالة تقديم التوجيه الاستخباراتي اللازم لضمان عدم تعريض مسار العمليات الحساسة للخطر.</p>
                 </div>
             </div>
         </div>
@@ -442,13 +460,12 @@
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة السادسة (٦)</span>
-                <i class="fas fa-file-signature" style="color: #444;"></i>
+                <i class="fas fa-users-cog"></i>
             </div>
             <div class="article-body">
-                <h3>المتعاقدون والمصادر البشرية (Contractors & Assets)</h3>
+                <h3>إدارة الأصول والموارد الخاصة (Asset Management)</h3>
                 <div class="article-content">
-                    <p>تخضع علاقة الوكالة بالمتعاقدين الأمنيين (PMCs) للعقود القانونية الفيدرالية. لا يتمتع المتعاقدون بأي صفة شرطية أو حصانة دبلوماسية داخل الأراضي الأمريكية، ويخضعون للقوانين الجنائية المحلية بشكل كامل.</p>
-                    <p>فيما يتعلق بالمصادر البشرية (Assets)، تلتزم الوكالة بحماية هوياتهم وفقاً لقانون <strong>(Intelligence Identities Protection Act)</strong>، ولكن هذا لا يمنحهم الحصانة من الملاحقة القضائية عن أي جرائم جنائية يرتكبونها.</p>
+                    <p>تمتلك الوكالة السلطة الكاملة لتوظيف وإدارة الأصول البشرية والتعاقد مع الكفاءات المتخصصة لدعم مهامها. يتم دمج هذه الموارد ضمن الهيكل التشغيلي للوكالة، وتوفير الغطاء الإداري والعملياتي اللازم لهم لأداء مهامهم بكفاءة عالية ضمن الأطر المعتمدة.</p>
                 </div>
             </div>
         </div>
@@ -456,34 +473,32 @@
         <!-- الفصل الثالث -->
         <div class="chapter-title" data-aos="fade-right">
             <div class="chapter-line"></div>
-            <div class="chapter-text">الفصل الثالث: السلوك المهني وأمن المعلومات</div>
+            <div class="chapter-text">الفصل الثالث: الالتزام والهيبة المؤسسية</div>
             <div class="chapter-line"></div>
         </div>
 
         <div class="article-card" data-aos="fade-up">
             <div class="article-header">
                 <span class="article-number">المادة السابعة (٧)</span>
-                <i class="fas fa-lock" style="color: #444;"></i>
+                <i class="fas fa-file-shield"></i>
             </div>
             <div class="article-body">
-                <h3>المعلومات المصنفة (Classified Information)</h3>
+                <h3>قدسية المعلومات وتصنيفها (Information Sovereignty)</h3>
                 <div class="article-content">
-                    <p>يخضع التعامل مع المعلومات السرية لقوانين <strong>(18 U.S. Code § 798)</strong> وقوانين التجسس. يحظر مشاركة المعلومات الحساسة مع جهات إنفاذ القانون المحلية إلا عبر قنوات التنسيق الرسمية وعند وجود "حاجة للمعرفة" (Need-to-Know).</p>
-                    <p>أي تسريب متعمد للمعلومات يعرض الموظف للملاحقة الفيدرالية والسجن، ويتم التحقيق في هذه القضايا حصراً من قبل وحدة مكافحة التجسس في FBI.</p>
+                    <p>تُعتبر معلومات الوكالة من أصول الدولة الاستراتيجية. يتم التعامل مع هذه المعلومات وفق بروتوكولات "السرية التامة"، ويقع على عاتق كل عضو واجب حماية هذه الأسرار. إن الحفاظ على أمن المعلومات هو المعيار الأساسي للولاء والمهنية.</p>
                 </div>
             </div>
         </div>
 
-        <div class="article-card" data-aos="fade-up" style="border-color: #444;">
-            <div class="article-header" style="background: #222;">
+        <div class="article-card" data-aos="fade-up">
+            <div class="article-header">
                 <span class="article-number">المادة الثامنة (٨)</span>
-                <i class="fas fa-user-tie" style="color: var(--agency-accent);"></i>
+                <i class="fas fa-crown"></i>
             </div>
             <div class="article-body">
-                <h3 style="color: var(--agency-accent);">السلوك المهني والتنسيق (Professional Conduct)</h3>
+                <h3>الهيبة والبروتوكول (Institutional Protocol)</h3>
                 <div class="article-content">
-                    <p>يُتوقع من موظفي الوكالة الالتزام بأعلى معايير المهنية عند التعامل مع نظرائهم في الأجهزة الأخرى. لا يُعتبر "عدم التعاون" أو "الإهانة" جريمة جنائية بحد ذاتها، بل مسألة إدارية يتم حلها بين الوكالات.</p>
-                    <p>في حال عرقلة موظف عام لعملية فيدرالية بشكل متعمد، يتم توثيق الواقعة ورفعها لوزارة العدل (DOJ) للنظر في توجيه تهمة "عرقلة العدالة" (Obstruction of Justice) وفق الإجراءات القانونية السليمة، دون اللجوء للاعتقال الميداني التعسفي.</p>
+                    <p>يمثل عملاء الوكالة نخبة المجتمع الاستخباراتي. يتوجب على كافة الأعضاء الالتزام بالسلوك المهني الذي يعكس هيبة الدولة ومكانة الوكالة. إن التعاون والاحترام المتبادل بين الوكالات هو القاعدة الأساسية، ويتم التعامل مع أي تجاوزات عبر القنوات الرسمية العليا بما يحفظ مكانة وهيبة المؤسسة.</p>
                 </div>
             </div>
         </div>
@@ -491,36 +506,32 @@
     </section>
 
     <footer>
-        <div class="doj-ref">U.S. Government Official Document</div>
-        <p class="copy-right">Reference: Title 50 U.S. Code / Executive Order 12333</p>
-        <span class="footer-alert">UNAUTHORIZED DISCLOSURE IS A FEDERAL OFFENSE PUNISHABLE BY LAW</span>
-        <p class="copy-right" style="margin-top: 15px;">&copy; <script>document.write(new Date().getFullYear())</script> CIA / RECORDS DIVISION</p>
+        <div class="doj-ref">AGENCY INTERNAL DIRECTIVE</div>
+        <p class="copy-right">OFFICE OF THE DIRECTOR - OFFICIAL CHARTER</p>
+        <span class="ref-code">REF: CIA-CONST-V1 // AUTH: DCI</span>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
             once: true,
-            offset: 50,
-            duration: 800
+            offset: 60,
+            duration: 900
         });
 
         window.addEventListener('load', () => {
             const bootScreen = document.getElementById('secure-boot');
             setTimeout(() => {
                 bootScreen.style.opacity = '0';
-                bootScreen.style.transition = 'opacity 0.5s ease';
+                bootScreen.style.transition = 'opacity 0.6s ease';
                 setTimeout(() => {
                     bootScreen.style.display = 'none';
-                }, 500);
-            }, 2000);
+                }, 600);
+            }, 2200);
         });
-    </script>
-    <!-- حماية بسيطة -->
-    <script>
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+        
+        // منع النسخ والنقر بالزر الأيمن للحفاظ على طابع السرية
+        document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
 </body>
 </html>
