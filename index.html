@@ -532,5 +532,49 @@
         
         document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
+    <!-- حماية الموقع (Anti-Inspect) -->
+    <script>
+        // 1.
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // 2.    (F12, Ctrl+Shift+I, Ctrl+U, etc.)
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            
+            // Ctrl + Shift + I (Inspect)
+            // Ctrl + Shift + J (Console)
+            // Ctrl + Shift + C (Element Inspector)
+            if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+                e.preventDefault();
+                return false;
+            }
+
+            // Ctrl + U (View Source)
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 3. (Debugger Trap)
+        // 
+        setInterval(function() {
+            const startTime = performance.now();
+            debugger; // 
+            const endTime = performance.now();
+            
+            //
+            if (endTime - startTime > 100) {
+                document.body.innerHTML = '<div style="background:black;color:red;height:100vh;display:flex;justify-content:center;align-items:center;font-size:2rem;font-family:sans-serif;">Developer Tools are not allowed!</div>';
+                window.location.reload(); // 
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
